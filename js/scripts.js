@@ -52,3 +52,37 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Add click event listener to close dropdowns when clicking outside
+    document.addEventListener('click', function (event) {
+        var dropdowns = document.querySelectorAll('.navbar-nav .nav-item.dropdown.show');
+        dropdowns.forEach(function (dropdown) {
+            if (!dropdown.contains(event.target)) {
+                dropdown.classList.remove('show');
+            }
+        });
+    });
+
+// //     Add click event listener to toggle dropdowns
+// //     var dropdownToggles = document.querySelectorAll('.navbar-nav .nav-item.dropdown .nav-link.dropdown-toggle .dropdown-menu');
+// //     dropdownToggles.forEach(function (toggle) {
+// //         toggle.addEventListener('click', function (event) {
+// //             event.preventDefault();
+// //             event.stopPropagation();
+// //             var dropdown = this.parentElement;
+// //             dropdown.classList.toggle('show');
+// //         });
+// //     });
+ //});
+
+function myFunction() {
+    var x = document.getElementById("mainNav");
+    if (x.className === "tosecondarypnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topsecondarynav";
+    }
+  }
+
